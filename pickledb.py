@@ -80,7 +80,8 @@ class PickleDB:
         """
         Load JSON database from disk into memory.
 
-        Returns True on success (or if the file did not exist / was empty).
+        Returns `self` to allow chaining:
+            db = PickleDB("Example.json").load()
         """
         if os.path.exists(self.location) and os.path.getsize(self.location) > 0:
             async with aiofiles.open(self.location, "rb") as f:
@@ -91,7 +92,7 @@ class PickleDB:
 
         async with self._lock:
             self.db = new_db
-        return True
+        return self
 
     @dualmethod
     async def save(self) -> bool:
