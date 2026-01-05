@@ -1057,7 +1057,7 @@ asyncio.run(main())</code></pre>
 
           <div class="api-method">
             <div class="api-signature">
-              <code>load() -&gt; bool</code>
+              <code>load() -&gt; self</code>
               <div class="api-tags">
                 <span class="api-tag">sync</span>
                 <span class="api-tag">async</span>
@@ -1069,7 +1069,7 @@ asyncio.run(main())</code></pre>
             <ul class="api-usage">
               <li><strong>Sync:</strong> <code>db.load()</code></li>
               <li><strong>Async:</strong> <code>await db.load()</code></li>
-              <li>Returns <code>True</code> on success.</li>
+              <li>Returns the database instance itself, allowing method chaining.</li>
             </ul>
           </div>
 
